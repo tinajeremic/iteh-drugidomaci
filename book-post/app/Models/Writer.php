@@ -12,7 +12,8 @@ class Writer extends Model
     protected $fillable = [
         
         'name',
-        'country'        
+        'country',
+        'gender',        
     ];
 
 

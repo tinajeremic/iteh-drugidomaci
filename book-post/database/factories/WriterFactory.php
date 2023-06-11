@@ -19,6 +19,7 @@ class WriterFactory extends Factory
         return [
             'name' => fake()->name(),
             'country'=>$this->faker->country(),
+            'gender'=>$this->faker->randomElements(['male', 'female'])[0]
         ];
     }
 }
