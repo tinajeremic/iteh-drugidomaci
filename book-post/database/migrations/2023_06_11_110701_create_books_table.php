@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('title');
+            $table->year('year');
+            $table->foreignId('writer_id');
+            $table->foreignId('user_id');
         });
     }
 
@@ -22,6 +25,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books');
+        Schema::table('meetings', function (Blueprint $table) {
+            $table->dropForeign("user_id");
+            $table->dropForeign("writer_id");
+        });
     }
 };
