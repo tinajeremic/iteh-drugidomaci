@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WriterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +23,9 @@ Route::get('/', function () {
 Route::get('/greeting', function () {
     return 'Hello World';
 });
+
+Route::get('/users', [UserController::class, 'index']);
+
+Route::get('/books', [BookController::class, 'index']);
+
+Route::get('/writers', [WriterController::class, 'index']);
